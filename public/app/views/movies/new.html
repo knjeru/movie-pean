@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="input-group">
+    <span class="input-group-addon">Search IMDB</span>
+    <omdb-search ng-model="omdbFormData"></omdb-search>
+  </div>
+  <p ng-controller="searchOMDB">{{omdbFormData}}</p>
+    <form class="" ng-submit="addMovie()">
+      <div class="input-group">
+        <span class="input-group-addon">Title:</span>
+        <input type="text" class="form-control" placeholder="Enter the title" ng-model="movieFormData.title">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Release Date:</span>
+        <input type="date" class="form-control" ng-model="movieFormData.releaseDate">
+
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Director:</span>
+        <input type="text" class="form-control" placeholder="Enter the director" ng-model="movieFormData.director">
+
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Description:</span>
+        <input type="text" class="form-control" placeholder="Enter the description" ng-model="movieFormData.description">
+
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Rating:</span>
+        <select ng-model="movieFormData.rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">ImageURL:</span>
+        <input type="url" class="form-control" placeholder="Enter image url" ng-model="movieFormData.imgUrl">
+        <img ng-src="{{movieFormData.imgUrl}}" alt="" ng-show="movieFormData.imgUrl"/>
+      </div>
+      <button type="submit" class="btn btn-primary">Add this Movie</button>
+    </form>
+</div>

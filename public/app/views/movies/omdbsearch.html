@@ -1,0 +1,18 @@
+<div class="col-md-10">
+  <div class="form-group" name="srchForm">
+    <input type="text" class="form-control" name="search" ng-model="title" ng-model-options="{debounce: 500}"/>
+    <p ng-show="search.$untouched">{{message}}</p>
+  </div>
+  <div class="col-md-5">
+    <img ng-src="{{omdbResult.Poster}}" ng-hide="omdbResult.Poster === 'N/A'"/>
+    <p ng-show="omdbResult.Poster === 'N/A'">Sorry IMDB does not have a poster for this movie!</p>
+    <p>Title: {{omdbResult.Title}}</p>
+    <p>Release Date: {{omdbResult.Released | date:"MM-dd-yyyy"}}</p>
+    <p>Director: {{omdbResult.Director}}</p>
+    <p>Description: {{omdbResult.Plot}}</p>
+    <p>Rating: <strong>{{omdbResult.imdbRating | number:0}}</strong></p>
+  </div>
+  <form ng-click="addOmdbMovie()">
+    <button type="button" class="btn btn-success" ng-show="omdbResult">Add This Movie</button>
+  </form>
+</div>

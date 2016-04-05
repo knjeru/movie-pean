@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+  <head>
+    <meta charset="utf-8">
+    <title>MovUP</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.7/angular-css.min.js" charset="utf-8"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.5/angular-moment.min.js" charset="utf-8"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" ng-href="{{css}}">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <ul class="nav nav-tabs">
+          <a class="navbar-link" ui-sref='movies'><li>All Movies</li></a>
+          <a class="navbar-link" ui-sref='newMovie'><li>Add A Movie</li></a>
+        </ul>
+      </div>
+    </nav>
+    <div ui-view>
+      <!-- Partials here -->
+    </div>
+    <script src="/app/app.js" charset="utf-8"></script>
+    <script src="/app/controllers/maincontroller.js" charset="utf-8"></script>
+    <script src="/app/services/movieService.js" charset="utf-8"></script>
+    <script src="/app/services/omdbService.js" charset="utf-8"></script>
+    <script src="/app/directives/omdbSearch.js" charset="utf-8"></script>
+  </body>
+</html>

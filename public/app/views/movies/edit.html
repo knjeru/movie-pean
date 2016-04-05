@@ -1,0 +1,49 @@
+<div class="container">
+    <form class="" ng-submit="updateMovie()">
+      <div class="input-group">
+        <span class="input-group-addon">Title:</span>
+        <input type="text" class="form-control" ng-model="movieFormData.title" ng-value="movie.title">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Release Date:</span>
+        <input type="date" class="form-control" ng-model="movieFormData.releaseDate" ng-value="movie.releaseDate | date:'yyyy-MM-dd'">
+
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Director:</span>
+        <input type="text" class="form-control" ng-model="movieFormData.director" ng-value="movie.director">
+
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Description:</span>
+        <input type="text" class="form-control" ng-model="movieFormData.description" ng-value="movie.description">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Rating:</span>
+        <select ng-model="movieFormData.rating" ng-value="movie.rating">
+          <option value="{{movie.rating}}" selected>{{movie.rating}}</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">ImageURL:</span>
+        <input type="text" class="form-control" ng-model="movieFormData.imgUrl" ng-value="movie.imgUrl">
+        <img ng-src="{{movie.imgUrl}}" alt="{{movie.title}}" ng-hide="movieFormData.imgUrl"/>
+        <img ng-src="{{movieFormData.imgUrl}}" alt="{{movieFormData.title}}" ng-show="movieFormData.imgUrl"/>
+      </div>
+      <button type="submit" class="btn btn-success">Update</button>
+      <a ng-href="#/movie/{{movie.id}}"><button type="button" class="btn btn-primary">Cancel</button></a>
+    </form>
+    <form ng-submit="deleteMovie()">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>

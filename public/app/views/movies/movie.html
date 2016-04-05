@@ -1,0 +1,12 @@
+<div class="container">
+
+  <div class="col-md-5">
+    <img ng-src="{{movie.imgUrl}}" alt="" />
+    <p>Title: {{movie.title}}</p>
+    <p>Release Date: {{movie.releaseDate | date:'MM-dd-yyyy'}}</p>
+    <p>Director: {{movie.director}}</p>
+    <p>Description: {{movie.description}}</p>
+    <p>Rating: <strong>{{movie.rating}}</strong></p>
+  </div>
+    <a ng-href="#/movie/{{movie.id}}/edit"><button class="btn btn-warning btn-lg" type="button">Edit</button></a>
+</div>

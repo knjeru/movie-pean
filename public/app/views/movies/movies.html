@@ -1,0 +1,12 @@
+<div class="container">
+
+  <div ng-repeat="movie in movieList">
+    <a ng-href="#/movie/{{movie.id}}"><img ng-src="{{movie.imgUrl}}" alt="" /></a>
+    <p>Title: {{movie.title}}</p>
+    <p>Release Date: {{movie.releaseDate | date:'MM-dd-yyyy'}}</p>
+    <p>Director: {{movie.director}}</p>
+    <p>Description: {{movie.description}}</p>
+    <p>Rating: <strong>{{movie.rating}}</strong></p>
+  </div>
+
+</div>
